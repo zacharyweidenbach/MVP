@@ -41,7 +41,7 @@ gulp.task('start', ['serve'], function () {
     notify: true,
     injectChanges: true,
     files: paths.src.scripts.concat(paths.src.html, paths.src.style),
-    proxy: 'localhost:3000'
+    proxy: 'localhost:8000'
   });
 });
 
@@ -50,6 +50,7 @@ gulp.task('karma', function (done) {
   new KarmaServer({
     configFile: __dirname + '/karma.conf.js'
   }, done).start();
+  console.log(__dirname);
 });
 
 // Use ES5 by default
